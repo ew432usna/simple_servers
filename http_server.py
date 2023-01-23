@@ -26,7 +26,7 @@ while True:
         data = conn.recv(1024) # accept up to 1024 characters
         print(f"DATA: {data.decode()}")
         request = data.decode().split('\n')[0].split(' ')
-        if len(request)<2 or len(request[1])<2:
+        if len(request)<2 or len(request[1])==0:
             conn.sendall("Invalid request".encode())
             continue
         action = request[0]
