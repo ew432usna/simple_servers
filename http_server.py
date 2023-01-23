@@ -4,12 +4,11 @@
 # Server:
 # $> python3 http_server.py
 # Client:
-# $> nc localhost 5000
+# $> nc localhost 5002
 # GET /hello.html
 
 import socket
 import os
-from random import randint
 
 HOST = "0.0.0.0"  # Listen on all network interfaces (wildcard)
 PORT = 5002  # Port to listen on

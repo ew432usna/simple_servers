@@ -7,12 +7,10 @@
 # $> nc localhost 5000
 
 import socket
-from random import randint
 
 HOST = "0.0.0.0"  # Listen on all network interfaces (wildcard)
 PORT = 5000
 print(f"Echo Server listening on {PORT}")
-
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
