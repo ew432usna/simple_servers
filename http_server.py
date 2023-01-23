@@ -12,10 +12,11 @@ import os
 from random import randint
 
 HOST = "0.0.0.0"  # Listen on all network interfaces (wildcard)
-PORT = randint(5000,10000)  # Port to listen on
-print(f"File Server listening on {PORT}")
+PORT = 5002  # Port to listen on
+print(f"HTTP Server listening on {PORT}")
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind((HOST, PORT))
 s.listen() # wait for somebody to connect
 while True:
